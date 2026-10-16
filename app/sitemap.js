@@ -1,8 +1,7 @@
 import { getDishes } from "@/lib/dishes";
 
 export default async function sitemap() {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
   const dishes = await getDishes();
 

@@ -12,7 +12,7 @@ export default function LogoutButton() {
   }
 
   return (
-    <button type="button" onClick={handleLogout}>
+    <button type="button" onClick={handleLogout} className="singnOunt">
       Sign out
     </button>
   );

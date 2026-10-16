@@ -23,15 +23,15 @@ export default async function KitchenPage() {
     );
   }
 
-  const orders = getAllOrders();
+  const order = getAllOrders();
 
   return (
     <div>
       <h1>Kitchen</h1>
-      {orders.length === 0 ? (
+      {order.length === 0 ? (
         <p>No orders yet.</p>
       ) : (
-        orders.map((order) => (
+        order.map((order) => (
           <div key={order.id}>
             <h2>Order #{order.id}</h2>
             <p>{order.name} — {order.area}</p>

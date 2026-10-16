@@ -32,11 +32,10 @@ export default function RootLayout({ children }) {
           <nav aria-label="Main navigation">
             <Link href="/">Home</Link>
             <Link href="/menu">Menu</Link>
-            <Link href="/search">Search</Link>
             <Link href="/cart">Cart</Link>
             <Link href="/checkout">Checkout</Link>
             <Link href="/orders">Orders</Link>
-            <Link href="/order-status">Order Status</Link>
+            <Link href="/kitchen">staff</Link>
             <Link href="/login">Sign in</Link>
             <LogoutButton />
           </nav>

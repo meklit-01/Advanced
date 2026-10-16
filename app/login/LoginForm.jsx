@@ -38,7 +38,7 @@ export default function LoginForm() {
   return (
     <div>
       <h1>Sign in</h1>
-      <p>Use alice, bob, or staff for the demo accounts.</p>
+      
 
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Username</label>
@@ -50,7 +50,9 @@ export default function LoginForm() {
           required
         />
 
-        <button type="submit">Sign in</button>
+        <button type="submit" className="sing-in">Sign in</button>
+
+        <p>Use alice, bob, or staff for the demo accounts.</p>
       </form>
 
       {error && <p>{error}</p>}

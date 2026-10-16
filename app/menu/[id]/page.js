@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getDishes } from "@/lib/dishes";
+import DishCartButton from "@/components/DishCartButton";
 
+// Generate static pages for all dishes
 export async function generateStaticParams() {
   const dishes = await getDishes();
 
@@ -10,34 +12,37 @@ export async function generateStaticParams() {
   }));
 }
 
+// SEO metadata and social media preview
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const dishes = await getDishes();
-  const dish = dishes.find((item) => String(item.id) === String(id));
+
+  const dish = dishes.find(
+    (item) => String(item.id) === String(id)
+  );
 
   if (!dish) {
     return {
-      title: "Dish not found",
-      description: "The requested Addis Eats dish could not be found.",
+      title: "Dish Not Found",
+      description: "The requested dish could not be found.",
     };
   }
 
   return {
     title: dish.name,
-    description: `${dish.name}: ${dish.description}`,
-    alternates: {
-      canonical: `/menu/${dish.id}`,
-    },
+    description: dish.description,
+
     openGraph: {
       title: dish.name,
       description: dish.description,
-      images: [`/menu/${dish.id}/opengraph-image`],
+      images: [`/${dish.image}`],
     },
   };
 }
 
 export default async function DishPage({ params }) {
   const { id } = await params;
+
   const dishes = await getDishes();
 
   const dish = dishes.find(
@@ -48,6 +53,7 @@ export default async function DishPage({ params }) {
     notFound();
   }
 
+  // Structured data for search engines
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "MenuItem",
@@ -80,7 +86,9 @@ export default async function DishPage({ params }) {
       />
 
       <p>{dish.description}</p>
-      <p>{dish.price} ETB</p>
+      <p>Price: {dish.price} ETB</p>
+      <DishCartButton />
+      
     </article>
   );
 }
