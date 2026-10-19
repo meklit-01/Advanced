@@ -52,7 +52,7 @@ export default function LoginForm() {
 
         <button type="submit" className="sing-in">Sign in</button>
 
-        <p>Use alice, bob, or staff for the demo accounts.</p>
+        <p>Use melkem, abebe, or staff for the demo accounts.</p>
       </form>
 
       {error && <p>{error}</p>}
