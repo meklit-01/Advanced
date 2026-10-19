@@ -67,7 +67,7 @@ export default async function DishPage({ params }) {
   };
 
   return (
-    <article>
+    <article className="dishes">
       <h1>{dish.name}</h1>
 
       <script

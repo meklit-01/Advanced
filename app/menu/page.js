@@ -33,7 +33,7 @@ export default async function MenuPage({ searchParams }) {
   };
 
   return (
-    <div>
+    <div className="menu">
       <h1>Our Menu</h1>
       <PageMenu initialData={initialData} />
     </div>

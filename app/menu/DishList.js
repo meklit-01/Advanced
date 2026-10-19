@@ -40,7 +40,7 @@ export default function DishList({ dishes }) {
               <button
                 onClick={() => removeFromCart(dish.id)}
               >
-                Remove from Cart
+                Remove
               </button>
             ) : (
               <button

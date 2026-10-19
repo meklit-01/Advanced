@@ -1,16 +1,29 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-
-html {
-  font-family: var(--font-geist), Arial, sans-serif;
+img{
+  width: 100%;
 }
-
+a{
+  color: inherit;
+  text-decoration: none;
+}
+button{
+  margin: 5px 0;
+  border: none;
+  border-radius: 15px;
+}
+button:hover{
+  background-color: bisque;
+}
 body {
   margin: 0;
   padding: 20px;
   line-height: 1.5;
   background-color: rgb(231, 99, 32);
+  font-family: var(--font-geist), Arial, sans-serif;
 }
 
 header {
@@ -25,12 +38,20 @@ header a{
   text-decoration: none;
   color: #14532d;
 }
+.menu a{
+ color: #14532d;
+ margin-top: 5px;
+}
+
+.menu a:hover{
+  color: #34c56c;
+}
 .singnOunt{
   background-color: #fff;
   border-radius: 15px;
 }
 .singnOunt:hover{
-  background-color: gray;
+  background-color:bisque;
 }
 nav {
   display: flex;
@@ -65,8 +86,10 @@ main {
 
 .dish-grid img {
   display: block;
-  width: 100%;
   height: auto;
+}
+.dishes{
+  margin: 30px;
 }
 
 .pages {
@@ -87,7 +110,7 @@ main {
 }
 
 .card-button button:hover{
-  background-color: gray;
+  background-color: bisque;
 }
 
 .dish-cart-actions {
